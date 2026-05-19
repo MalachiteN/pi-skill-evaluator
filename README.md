@@ -13,16 +13,14 @@ Automated skill description trigger-rate evaluation for the pi coding agent.
 
 ## Installation
 
-Copy or symlink this extension into pi's extensions directory:
+Add to your pi settings (`~/.pi/agent/settings.json`):
 
-```bash
-# Global
-mkdir -p ~/.pi/agent/extensions
-ln -s /path/to/pi-skill-evaluator ~/.pi/agent/extensions/pi-skill-evaluator
-
-# Project-local
-mkdir -p .pi/extensions
-ln -s /path/to/pi-skill-evaluator .pi/extensions/pi-skill-evaluator
+```json
+{
+  "packages": [
+    "git:https://github.com/MalachiteN/pi-skill-evaluator.git"
+  ]
+}
 ```
 
 Then run `/reload` in pi (or restart).
