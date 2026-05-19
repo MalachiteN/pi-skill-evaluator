@@ -27,7 +27,7 @@ Then run `/reload` in pi (or restart).
 
 ## Dependencies
 
-- [skill-creator](https://github.com/earendil-works/pi-skill-evaluator) skill (for `aggregate_benchmark.py` and `generate_review.py`)
+- [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) skill (for `aggregate_benchmark.py` and `generate_review.py`)
 - Python 3 (for the above scripts)
 
 ## Usage
