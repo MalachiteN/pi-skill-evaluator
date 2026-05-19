@@ -1,0 +1,15 @@
+{
+  "name": "pi-skill-evaluator",
+  "version": "0.1.0",
+  "description": "Automated skill description trigger-rate evaluation for pi",
+  "type": "module",
+  "main": "./index.ts",
+  "keywords": ["pi-package"],
+  "pi": {
+    "extensions": ["./index.ts"]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "^0.75.0",
+    "typebox": "^0.0.1"
+  }
+}

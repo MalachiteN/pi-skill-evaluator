@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Test artifacts
+test-output*/
+test-*.html
+test-*.json
+test-skill/
+test-skill-baseline/
+
+# Windows artifacts
+nul
+
+# Local pi extension installation (used for dev only)
+.pi/
