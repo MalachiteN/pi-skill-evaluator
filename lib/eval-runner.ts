@@ -176,6 +176,18 @@ export function writeRunArtifacts(
 
   writeFileSync(join(outputsDir, "transcript.md"), lines.join("\n"), "utf8");
 
+  // Also write response.md so generate_review.py shows output files
+  const lastAssistantMsg = evalResult.messagesSnapshot
+    .filter((m) => m.role === "assistant")
+    .pop();
+  const responseText = lastAssistantMsg?.content
+    .filter((c: any) => c.type === "text")
+    .map((c: any) => c.text)
+    .join("\n") ?? "";
+  if (responseText.trim()) {
+    writeFileSync(join(outputsDir, "response.md"), responseText.trim(), "utf8");
+  }
+
   // grading.json
   const pass = shouldTrigger === evalResult.triggered;
   const grading = {
