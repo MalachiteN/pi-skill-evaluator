@@ -74,6 +74,19 @@ pi -p "/skill-eval ./my-skill --eval-set ./evals.json --report report.html"
   --report report.html
 ```
 
+### Fast vs Full Mode
+
+By default, eval runs in **fast mode**: as soon as the agent reads the target `SKILL.md`, the session is immediately disposed. This is 3–5× faster and sufficient for trigger-detection and description optimization.
+
+Use **full mode** when you need complete transcripts, token usage, and output files in the HTML report:
+
+```bash
+/skill-eval ./my-skill \
+  --eval-set ./evals.json \
+  --full \
+  --report report.html
+```
+
 ## Eval Set Format
 
 `evals.json` is an array of objects:
@@ -100,6 +113,8 @@ pi -p "/skill-eval ./my-skill --eval-set ./evals.json --report report.html"
 | `--report` | — | Generate static HTML report |
 | `--baseline` | — | Baseline skill path for comparison |
 | `--parallel` | `false` | Run evals in parallel |
+| `--fast` | `true` | Trigger-detect only; abort on first read (default) |
+| `--full` | `false` | Wait for full agent response; needed for reports |
 
 ## Output Structure
 
